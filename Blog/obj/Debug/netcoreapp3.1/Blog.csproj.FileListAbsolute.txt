@@ -59,3 +59,5 @@ E:\blog\Blog\Blog\obj\Debug\netcoreapp3.1\Blog.csproj.CopyComplete
 E:\blog\Blog\Blog\obj\Debug\netcoreapp3.1\Blog.dll
 E:\blog\Blog\Blog\obj\Debug\netcoreapp3.1\Blog.pdb
 E:\blog\Blog\Blog\obj\Debug\netcoreapp3.1\Blog.genruntimeconfig.cache
+E:\blog\Blog\Blog\bin\Debug\netcoreapp3.1\Humanizer.dll
+E:\blog\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll

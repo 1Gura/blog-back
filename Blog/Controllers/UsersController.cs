@@ -19,8 +19,8 @@ namespace Blog.Controllers
             db = context;
             if (!db.Users.Any())
             {
-                db.Users.Add(new User { Name = "Илья", Password = "qwerty", Email = "gura.ilay2011@yandex.ru"});
-                db.Users.Add(new User { Name = "Tom", Password = "qwerty", Email = "Tom@yandex.ru"});
+                db.Users.Add(new User { Name = "Илья", Password = "qwerty", Email = "gura.ilay2011@yandex.ru", Role = Role.Admin });
+                db.Users.Add(new User { Name = "Tom", Password = "qwerty", Email = "Tom@yandex.ru", Role = Role.User});
                 db.SaveChanges();
             }
         }
@@ -42,17 +42,20 @@ namespace Blog.Controllers
         }
 
         // POST api/users
-        [HttpPost]
-        public async Task<ActionResult<User>> Post(User user)
+        [HttpPost("login")]
+        public ActionResult<Token> Login(User user)
         {
             if (user == null)
             {
                 return BadRequest();
             }
+            var response = db.Users.FirstOrDefault(u => u.Email == user.Email);
+            if (response != null)
+            {
+                return new Token(user);
+            }
+            return BadRequest();
 
-            db.Users.Add(user);
-            await db.SaveChangesAsync();
-            return Ok(user);
         }
 
         // PUT api/users/
