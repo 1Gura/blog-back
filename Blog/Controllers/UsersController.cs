@@ -19,7 +19,7 @@ namespace Blog.Controllers
             db = context;
             if (!db.Users.Any())
             {
-                db.Users.Add(new User { Name = "Илья", Password = "qwerty", Email = "gura.ilay2011@yandex.ru", Role = Role.Admin });
+                db.Users.Add(new User { Name = "Илья", Password = "qwerty", Email = "gura.ilya2011@yandex.ru", Role = Role.Admin });
                 db.Users.Add(new User { Name = "Tom", Password = "qwerty", Email = "Tom@yandex.ru", Role = Role.User});
                 db.SaveChanges();
             }
